@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Truc PHAN | M.Sc. Volkswirtschaftslehre</title>
+    <meta name="description" content="Thanh Truc PHAN – M.Sc.-Student in Volkswirtschaftslehre an der Universität Bern. Schwerpunkte: Asiatische Wirtschaft, Internationale Wirtschaft und Datenanalyse.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script>localStorage.setItem('preferredLang','de');</script>
+</head>
+<body>
+
+    <header class="nav-header">
+        <nav class="nav-container">
+            <a href="#hero" class="nav-logo">TTP</a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">Über mich</a></li>
+                <li><a href="#education">Ausbildung</a></li>
+                <li><a href="#experience">Erfahrung</a></li>
+                <li><a href="#skills">Kompetenzen</a></li>
+                <li><a href="#projects">Projekte</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="index.html" class="nav-lang active" onclick="localStorage.setItem('preferredLang','en')">EN</a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Navigationsmenü öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+
+                <div class="hero-text">
+                    <p class="hero-greeting">Hallo, ich bin</p>
+                    <h1 class="hero-name">Thanh Truc PHAN</h1>
+                    <p class="hero-headline">M.Sc.-Student in Volkswirtschaftslehre</p>
+                    <p class="hero-sub-headline">Data &amp; Business Analysis &nbsp;·&nbsp; Makro, Mikro &amp; Internationale / Asiatische Wirtschaft</p>
+
+                    <p class="hero-intro">
+                        M.Sc.-Student in Volkswirtschaftslehre an der Universität Bern mit Schwerpunkten
+                        in Makroökonomie, Mikroökonomie, Ökonometrie und angewandter Wirtschaftsanalyse.
+                        Mein Studium verbindet quantitative Methoden mit Bereichen wie Industrieorganisation,
+                        Arbeitsökonomie, Energieökonomie, Klimaökonomie und Banking. Ich interessiere mich
+                        dafür, wie Volkswirtschaften, Unternehmen und Institutionen sich entwickeln und
+                        anpassen, mit einem besonderen Fokus auf den asiatischen Wirtschaftsraum,
+                        Entwicklungsstrategien und datenbasierte Wirtschaftsanalyse.
+                    </p>
+
+                    <div class="hero-badges">
+                        <span class="badge badge-location">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Bern, Schweiz
+                        </span>
+                        <span class="badge badge-open">
+                            <span class="pulse-dot" aria-hidden="true"></span>
+                            Offen für Praktika &amp; Einstiegsstellen
+                        </span>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="assets/cv.pdf" download="CV Thanh Truc Phan" class="btn btn-primary">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Lebenslauf herunterladen
+                        </a>
+                        <a href="mailto:thanhtrucphan01@gmail.com" class="btn btn-secondary">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,12 2,6"/>
+                            </svg>
+                            E-Mail schreiben
+                        </a>
+                        <a href="https://www.linkedin.com/in/thanh-truc-phan" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-ring">
+                        <img src="assets/profile.jpg" alt="Porträt von Thanh Truc PHAN" class="hero-image" id="profileImg">
+                    </div>
+                    <div class="hero-image-card" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                        <div>
+                            <span>Universität Bern</span>
+                            <small>M.Sc. VWL</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="about" class="section">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Wer ich bin</span>
+                    <h2>Über mich</h2>
+                </div>
+
+                <div class="about-content">
+                    <p class="reveal">
+                        Ich bin von Natur aus aktiv und neugierig – ob auf der Taekwondo-Matte, bei einem
+                        Ausflug in die Alpen oder beim Kennenlernen einer neuen Stadt. Ich schätze echte
+                        Begegnungen mit Freunden und Familie, und mit der Kamera halte ich gerne die
+                        schönen Momente des Lebens fest.
+                    </p>
+
+                    <div class="about-highlights reveal">
+                        <div class="highlight-card">
+                            <span class="highlight-number">5</span>
+                            <span class="highlight-label">Sprachen</span>
+                            <span class="highlight-sub">DE · VI · EN · FR · JP</span>
+                        </div>
+                        <div class="highlight-card">
+                            <span class="highlight-number">4</span>
+                            <span class="highlight-label">Schwerpunkte</span>
+                            <span class="highlight-sub">Makro · Mikro · Ökonometrie · Daten</span>
+                        </div>
+                        <div class="highlight-card">
+                            <span class="highlight-number">2+</span>
+                            <span class="highlight-label">Jahre Erfahrung</span>
+                            <span class="highlight-sub">Wissenschaft &amp; Praxis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="about-sub-heading reveal">Neben dem Studium</h3>
+
+                <div class="hobbies-grid">
+
+                    <div class="hobby-card reveal">
+                        <div class="hobby-photo">
+                            <img src="assets/pictures/taekwondo.jpg" alt="Taekwondo-Wettkampf" loading="lazy" decoding="async" style="object-position: center top;">
+                        </div>
+                        <div class="hobby-body">
+                            <h3>Taekwondo</h3>
+                            <p>Wettkämpfe auf nationaler Ebene. Kampfsport hat meine Disziplin, Fokus und Willen geprägt.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card reveal">
+                        <div class="hobby-photo">
+                            <img src="assets/pictures/GP-Bern%20Running.jpg" alt="Grand Prix von Bern mit Freunden" loading="lazy" decoding="async">
+                        </div>
+                        <div class="hobby-body">
+                            <h3>Laufen</h3>
+                            <p>Den Grand Prix von Bern mit Freunden zu beenden gehört zu meinen liebsten Momenten des Jahres.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card reveal">
+                        <div class="hobby-photo">
+                            <img src="assets/pictures/volleyball.jpg" alt="Volleyball-Team in Tokio" loading="lazy" decoding="async">
+                        </div>
+                        <div class="hobby-body">
+                            <h3>Volleyball</h3>
+                            <p>Mit Freunden in Tokio und zuhause spielen. Volleyball verbindet Sport und Gemeinschaft.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card reveal">
+                        <div class="hobby-photo">
+                            <img src="assets/pictures/Snowboarding.jpg" alt="Snowboarden in den Alpen" loading="lazy" decoding="async" style="object-position: center top;">
+                        </div>
+                        <div class="hobby-body">
+                            <h3>Snowboarden</h3>
+                            <p>Jeden Winter mit Freunden auf die Piste. Nichts übertrifft einen klaren Tag in den Alpen.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card reveal">
+                        <div class="hobby-photo">
+                            <img src="assets/pictures/Bachelor Graduation.jpg" alt="Mit Freunden an einer Veranstaltung" loading="lazy" decoding="async" style="object-position: center top;">
+                        </div>
+                        <div class="hobby-body">
+                            <h3>Freunde &amp; Familie</h3>
+                            <p>Die Menschen um mich herum geben mir Energie. Ob Abend mit Freunden, Ausflug oder einfach gemeinsam essen.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card reveal">
+                        <div class="hobby-photo">
+                            <img src="assets/pictures/travelling.JPG" alt="Reisen am Mittelmeer" loading="lazy" decoding="async">
+                        </div>
+                        <div class="hobby-body">
+                            <h3>Reisen</h3>
+                            <p>Neue Orte, neue Perspektiven. Von den Schweizer Alpen bis Südostasien, immer auf der Suche nach dem nächsten Ziel.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="photo-subsection">
+                    <div class="photo-subsection-header reveal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                            <circle cx="12" cy="13" r="4"/>
+                        </svg>
+                        <div>
+                            <h3>Fotografie &amp; Videografie</h3>
+                            <p>Eine Auswahl meiner Aufnahmen aus Japan und der Schweiz.</p>
+                        </div>
+                    </div>
+                    <div class="photo-strip reveal">
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Fuji_.jpg" alt="Silhouette des Fuji in der Abenddämmerung" loading="lazy" decoding="async">
+                            <figcaption>Fuji in der Abenddämmerung</figcaption>
+                        </figure>
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Alps%20.jpg" alt="Skipiste in den Schweizer Alpen" loading="lazy" decoding="async" style="object-position: center 25%;">
+                            <figcaption>Schweizer Alpen</figcaption>
+                        </figure>
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Tokyo%20Festival.jpg" alt="Japanische Papierlaternen an einem Tokioter Festival" loading="lazy" decoding="async" style="object-position: center top;">
+                            <figcaption>Laternenfest, Tokio</figcaption>
+                        </figure>
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Shrine.jpg" alt="Japanischer Shinto-Schrein mit Torii-Tor" loading="lazy" decoding="async">
+                            <figcaption>Shinto-Schrein, Japan</figcaption>
+                        </figure>
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Shibuya%20Crossing.jpg" alt="Shibuya Crossing bei Nacht" loading="lazy" decoding="async" style="object-position: center top;">
+                            <figcaption>Shibuya Crossing</figcaption>
+                        </figure>
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Autumn%20Foliage.jpg" alt="Herbstlaub in Japan" loading="lazy" decoding="async">
+                            <figcaption>Herbstlaub, Japan</figcaption>
+                        </figure>
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Hiking.jpg" alt="Wanderweg in den Schweizer Alpen" loading="lazy" decoding="async" style="object-position: center 30%;">
+                            <figcaption>Schweizer Alpen, Wanderweg</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="education" class="section section-alt">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Akademischer Werdegang</span>
+                    <h2>Ausbildung</h2>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Feb 2025 – Aug 2026 (voraussichtlich)</span>
+                                <span class="timeline-tag tag-current">Aktuell</span>
+                            </div>
+                            <h3>Master of Science in Volkswirtschaftslehre</h3>
+                            <p class="timeline-institution">Universität Bern, Schweiz</p>
+                            <ul class="timeline-details">
+                                <li>Kurse: Mikroökonomie, Industrieorganisation, Gesundheitsökonomie, Energieökonomie, Arbeits- &amp; Verhaltensökonomie</li>
+                                <li>Masterarbeit: Tourismusökonomie (Arbeitstitel, in Bearbeitung)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot timeline-dot-exchange"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Sep 2025 – Feb 2026</span>
+                                <span class="timeline-tag tag-exchange">Austausch</span>
+                            </div>
+                            <h3>Auslandssemester</h3>
+                            <p class="timeline-institution">Waseda University, Tokio, Japan</p>
+                            <ul class="timeline-details">
+                                <li>Kurse: Asiatische Wirtschaft, Entwicklungsökonomie, Japanische Wirtschaft</li>
+                                <li>Immersive Auseinandersetzung mit japanischen und asiatischen Wirtschaftssystemen</li>
+                                <li>Hervorragende akademische Leistungen (A/A+ Noten)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Sep 2022 – Jan 2025</span>
+                            </div>
+                            <h3>Bachelor of Science in Volkswirtschaftslehre</h3>
+                            <p class="timeline-institution">Universität Bern, Schweiz</p>
+                            <ul class="timeline-details">
+                                <li>Nebenfächer: Mathematik, Digitalisierung und Angewandte Datenwissenschaft</li>
+                                <li>Bachelorarbeit: Numerische Analyse des Newsvendor-Problems unter Risiko</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Sep 2020 – Jun 2022</span>
+                            </div>
+                            <h3>Bachelor of Science in Mathematik</h3>
+                            <p class="timeline-institution">Universität Bern, Schweiz</p>
+                            <ul class="timeline-details">
+                                <li>Kurse in Analysis und Linearer Algebra</li>
+                                <li>Starke quantitative Grundlage; später Wechsel zu Volkswirtschaftslehre</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section id="experience" class="section">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Beruflicher Werdegang</span>
+                    <h2>Berufserfahrung</h2>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Nov 2023 – Heute</span>
+                                <span class="timeline-tag tag-current">Aktuell</span>
+                            </div>
+                            <h3>Junior Assistant (HR, Finanzen &amp; Administration)</h3>
+                            <p class="timeline-institution">
+                                Universität Bern &ndash; Institut für Wirtschaftsinformatik (IWI)
+                                &nbsp;·&nbsp; 40–50%
+                            </p>
+                            <ul class="timeline-details">
+                                <li>Ansprechperson für Studierende, Projektpartner und Mitarbeitende</li>
+                                <li>Koordination von Kommunikations- und Organisationsprozessen</li>
+                                <li>Rekrutierungsunterstützung: Stellenausschreibungen, Bewerbungsmanagement, Onboarding und Verwaltung</li>
+                                <li>Finanzielle Unterstützung: Rechnungsbearbeitung, Spesenabrechnung und Budgetverfolgung</li>
+                                <li>Mitwirkung im Qualitätsmanagement und bei der Digitalisierung interner Prozesse</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Jun 2022 – Okt 2023</span>
+                            </div>
+                            <h3>Sport Leader</h3>
+                            <p class="timeline-institution">Decathlon &ndash; Bern Westside &nbsp;·&nbsp; 30%</p>
+                            <ul class="timeline-details">
+                                <li>Aktive Kundenberatung und -betreuung im Sportartikelverkauf</li>
+                                <li>Sicherstellung eines hohen Serviceniveaus und Kundenzufriedenheit</li>
+                                <li>Organisation von Teamevents zur Förderung von Zusammenarbeit und Teamgeist</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section id="skills" class="section section-alt">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Was ich mitbringe</span>
+                    <h2>Kompetenzen</h2>
+                </div>
+
+                <div class="skills-grid">
+
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            Sprachen
+                        </h3>
+                        <div class="skill-tags">
+                            <div class="skill-tag-language">
+                                <span class="lang-name">Deutsch</span>
+                                <span class="lang-level lang-native">Muttersprache</span>
+                            </div>
+                            <div class="skill-tag-language">
+                                <span class="lang-name">Vietnamesisch</span>
+                                <span class="lang-level lang-native">Muttersprache</span>
+                            </div>
+                            <div class="skill-tag-language">
+                                <span class="lang-name">Englisch</span>
+                                <span class="lang-level">C1 – Fliessend</span>
+                            </div>
+                            <div class="skill-tag-language">
+                                <span class="lang-name">Französisch</span>
+                                <span class="lang-level">B2 – Gute Kenntnisse</span>
+                            </div>
+                            <div class="skill-tag-language">
+                                <span class="lang-name">Japanisch</span>
+                                <span class="lang-level">A2 – Grundkenntnisse</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <polyline points="16 18 22 12 16 6"/>
+                                <polyline points="8 6 2 12 8 18"/>
+                            </svg>
+                            Technische Tools
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-badge skill-badge-tech">Python</span>
+                            <span class="skill-badge skill-badge-tech">R</span>
+                            <span class="skill-badge skill-badge-tech">Stata</span>
+                            <span class="skill-badge skill-badge-tech">Matlab</span>
+                            <span class="skill-badge skill-badge-tech">Excel</span>
+                            <span class="skill-badge skill-badge-tech">Microsoft Office</span>
+                            <span class="skill-badge skill-badge-tech">SAP</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                            Fachliche Kompetenzen
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-badge">Datenanalyse</span>
+                            <span class="skill-badge">Wirtschaftliche Modellierung</span>
+                            <span class="skill-badge">Quantitative Forschung</span>
+                            <span class="skill-badge">Numerische Methoden</span>
+                            <span class="skill-badge">Angewandte Datenwissenschaft</span>
+                            <span class="skill-badge">Finanzanalyse</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section id="projects" class="section">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Akademische Arbeiten</span>
+                    <h2>Projekte &amp; Highlights</h2>
+                </div>
+
+                <div class="projects-grid">
+
+                    <div class="project-card reveal">
+                        <div class="project-preview">
+                            <img src="assets/Projects/Visuals/Beta_Distribution.jpg" alt="Beta-Verteilung aus der Bachelorarbeit" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            </svg>
+                        </div>
+                        <div class="project-meta">Bachelorarbeit &nbsp;·&nbsp; Nov 2024</div>
+                        <h3>Verhaltensökonomische Faktoren im Newsvendor-Problem: Eine numerische Analyse</h3>
+                        <p>
+                            Untersuchung, wie Risikoaversion, Verlustaversion und Umweltbewusstsein
+                            die optimalen Bestellentscheidungen im Newsvendor-Modell beeinflussen.
+                            Beta-Verteilungsszenarien und numerische Komparativstatik mit Python.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Entscheidungstheorie</span>
+                            <span class="project-tag">Risikoaversion</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Numerische Methoden</span>
+                        </div>
+                        <a href="assets/Projects/Phan_Thanh_Truc_Bachelor_Thesis.pdf" target="_blank" rel="noopener noreferrer" class="project-read-link">
+                            Arbeit lesen
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <div class="project-preview">
+                            <img src="assets/Projects/Visuals/energy consumption per capita over time.png" alt="Energieverbrauch pro Kopf" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <path d="M8 21h8M12 17v4"/>
+                            </svg>
+                        </div>
+                        <div class="project-meta">Energieökonomie &nbsp;·&nbsp; Frühjahr 2025</div>
+                        <h3>Energienachfrage, Verkehrsmittelwahl &amp; PV-Investition</h3>
+                        <p>
+                            Empirische Aufgabe mit vier Bereichen: Panel-Datenanalyse des Energieverbrauchs
+                            (1965–2023); Preiselastizitätsschätzung mit dynamischem OLS; multinomiales
+                            Logit-Modell zur Verkehrsmittelwahl (Swissmetro); und PV-Investitionsbeurteilung
+                            mit NPV-Analyse und Monte-Carlo-Simulation.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Energieökonomie</span>
+                            <span class="project-tag">Paneldaten</span>
+                            <span class="project-tag">Diskrete Wahl</span>
+                            <span class="project-tag">Monte Carlo</span>
+                        </div>
+                        <a href="assets/Projects/Energy_Economics_Assignment___Thanh_PHAN_20_120_093.pdf" target="_blank" rel="noopener noreferrer" class="project-read-link">
+                            Arbeit lesen
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <div class="project-preview">
+                            <img src="assets/Projects/Visuals/exchange_rates_timeseries.jpg" alt="Wechselkurszeitreihe JPY/CHF" loading="lazy" decoding="async">
+                        </div>
+                        <div class="project-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M3 3v18h18"/>
+                                <path d="M18 17l-6-6-4 4-4-4"/>
+                            </svg>
+                        </div>
+                        <div class="project-meta">Japanische Wirtschaft &nbsp;·&nbsp; Dez 2025</div>
+                        <h3>Makroökonomische Entwicklungen in Japan und der Schweiz: Ein Vergleich</h3>
+                        <p>
+                            Empirischer Bericht zum Vergleich von BIP-Wachstum, CPI-Inflation und
+                            nominalen Wechselkursen in Japan und der Schweiz (1980–2024). Erstellt mit
+                            R und Daten von OECD, SNB und Weltbank.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Makroökonomie</span>
+                            <span class="project-tag">Japan &amp; Schweiz</span>
+                            <span class="project-tag">R</span>
+                            <span class="project-tag">Datenvisualisierung</span>
+                        </div>
+                        <a href="assets/Projects/Analysis_of_the_Japanese_Economy_Report_PHAN_Thanh_3225B921_3.pdf" target="_blank" rel="noopener noreferrer" class="project-read-link">
+                            Arbeit lesen
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="papers-list-section">
+                    <h3 class="papers-list-heading reveal">Weitere akademische Arbeiten</h3>
+                    <div class="papers-list">
+
+                        <div class="paper-list-item reveal">
+                            <div class="paper-list-meta">Asiatische Wirtschaft &nbsp;·&nbsp; Dez 2025 – Feb 2026</div>
+                            <span class="paper-list-title">Vietnam: Wirtschaftliche Entwicklung, Middle-Income Trap und der Weg bis 2045</span>
+                            <p>Zweiteilige Studie über Vietnams Entwicklungstrajektorie: die Đổi-Mới-Transformation seit den 1990er Jahren und eine Bewertung des Wegs zum Hocheinkommensland bis 2045.</p>
+                        </div>
+
+                        <div class="paper-list-item reveal">
+                            <div class="paper-list-meta">Klimaökonomie &nbsp;·&nbsp; Jan 2025</div>
+                            <a href="assets/Projects/Climate_Economics_International Cooperation_Final_Term_Thanh_PHAN_20_120_093.pdf" target="_blank" rel="noopener noreferrer" class="paper-list-title">Internationale Klimakooperation &amp; Transfersysteme</a>
+                            <p>Analyse von Trittbrettfahrerproblemen und Koalitionsbildung, mit Ableitung von Nash-Gleichgewicht und globalem Sozialoptimum in einem biquadratischen Schadensmodell.</p>
+                        </div>
+
+                        <div class="paper-list-item reveal">
+                            <div class="paper-list-meta">Klimaökonomie &nbsp;·&nbsp; Jul 2025</div>
+                            <a href="assets/Projects/Climate_Economics_Scientific and Economic Foundations_Final_Term_ST2025_Thanh_PHAN_20_120_093.pdf" target="_blank" rel="noopener noreferrer" class="paper-list-title">Kohlenstoffbudget im Green-Solow-Modell</a>
+                            <p>Analytische und numerische Lösung des Green-Solow-Modells: Ableitung ausgewogener Wachstumspfade und Berechnung des minimalen Vermeidungsanteils zur Einhaltung des Kohlenstoffbudgets.</p>
+                        </div>
+
+                        <div class="paper-list-item reveal">
+                            <div class="paper-list-meta">Arbeitsökonomie &nbsp;·&nbsp; Nov 2024</div>
+                            <a href="assets/Projects/Labor_Economics_Assignment_Rebecca_Acosta_14_117_436_Thanh_Phan_20_120_093.pdf" target="_blank" rel="noopener noreferrer" class="paper-list-title">Replikationsstudie: Lohnungleichheit und Arbeitsmarktpolarisierung in den USA</a>
+                            <p>Replikation zentraler Ergebnisse von Autor, Katz &amp; Kearney (2008) und Autor &amp; Dorn (2013) zur Lohnungleichheit und Arbeitsmarktpolarisierung mit CPS-Mikrodaten in R.</p>
+                        </div>
+
+                        <div class="paper-list-item reveal">
+                            <div class="paper-list-meta">Entwicklungsökonomie &nbsp;·&nbsp; Jan 2025</div>
+                            <a href="assets/Projects/Development Economics Survey PHAN Thanh Truc 3225B921_3.pdf" target="_blank" rel="noopener noreferrer" class="paper-list-title">Literaturüberblick: Ungleichheit &amp; Wirtschaftswachstum</a>
+                            <p>Vergleich von Forbes (2000), Barro (2000) und Ostry et al. (2014) zu Ungleichheit und Wachstum, mit Analyse divergierender Ergebnisse und methodischer Herausforderungen.</p>
+                        </div>
+
+                        <div class="paper-list-item reveal">
+                            <div class="paper-list-meta">Industrieökologie &nbsp;·&nbsp; Jan 2026</div>
+                            <a href="assets/Projects/Industrial Ecology Short Paper PHAN Thanh 3225B921-3.pdf" target="_blank" rel="noopener noreferrer" class="paper-list-title">WIOD Input-Output-Analyse: CO₂-Emissionen des Schokoladenkonsums in Deutschland und Japan</a>
+                            <p>Anwendung eines EEIO-Rahmens mit WIOD 2013 zur Quantifizierung der eingebetteten CO₂-Emissionen aus dem Schokoladenkonsum, mit Identifikation der dominanten Emissionssektoren.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="documents" class="section section-alt">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Dokumentation</span>
+                    <h2>Weitere Dokumente</h2>
+                </div>
+
+                <p class="documents-notice reveal">
+                    Aus datenschutzrechtlichen Gründen werden Diplome, Zertifikate, Notenausweise, Referenzen
+                    und vollständige akademische Arbeiten nicht direkt auf dieser Website veröffentlicht.
+                    Sie stehen auf Anfrage im Bewerbungsprozess zur Verfügung.
+                </p>
+
+                <div class="documents-grid reveal">
+                    <div class="document-card">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                        <h3>Diplome</h3>
+                        <p>Auf Anfrage erhältlich</p>
+                    </div>
+                    <div class="document-card">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                            <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+                        </svg>
+                        <h3>Zertifikate</h3>
+                        <p>Auf Anfrage erhältlich</p>
+                    </div>
+                    <div class="document-card">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                            <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                        <h3>Notenausweise</h3>
+                        <p>Auf Anfrage erhältlich</p>
+                    </div>
+                    <div class="document-card">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <h3>Referenzen</h3>
+                        <p>Auf Anfrage erhältlich</p>
+                    </div>
+                    <div class="document-card">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                        <h3>Akademische Arbeiten</h3>
+                        <p>Auf Anfrage erhältlich</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="contact-inner reveal">
+                    <span class="section-label">Kontakt</span>
+                    <h2>Verbinden wir uns</h2>
+                    <p class="contact-description">
+                        Ich bin offen für Praktika, Traineeprogramme und Einstiegspositionen in den
+                        Bereichen Wirtschaft, Datenanalyse, Business und verwandten Feldern.
+                    </p>
+                    <div class="contact-buttons">
+                        <a href="mailto:thanhtrucphan01@gmail.com" class="btn btn-primary">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,12 2,6"/>
+                            </svg>
+                            thanhtrucphan01@gmail.com
+                        </a>
+                        <a href="tel:+41788222201" class="btn btn-secondary">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            +41 78 822 22 01
+                        </a>
+                        <a href="https://www.linkedin.com/in/thanh-truc-phan" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <a href="assets/cv.pdf" download="CV Thanh Truc Phan" class="btn btn-outline">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Lebenslauf
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Thanh Truc PHAN &nbsp;&middot;&nbsp; Bern, Schweiz</p>
+            <p class="footer-note">Erstellt mit HTML, CSS &amp; JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

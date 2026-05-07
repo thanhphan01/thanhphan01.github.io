@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ✏️ Edit the page title shown in the browser tab -->
+    <title>Thanh Truc Phan | M.Sc. Economics</title>
+    <!-- ✏️ Edit the description shown in Google search results -->
+    <meta name="description" content="Thanh Truc Phan – M.Sc. Student in Economics at the University of Bern. Specialising in Asian Economy, International Economics, and Data Analysis.">
+
+    <!-- Google Fonts — Inter (body) + Playfair Display (name heading) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script>if (localStorage.getItem('preferredLang') !== 'en') { window.location.replace('de.html'); }</script>
+</head>
+<body>
+
+    <!-- ================================================================
+         NAVIGATION — sticky bar at the top of every page
+         ================================================================ -->
+    <header class="nav-header">
+        <nav class="nav-container">
+            <!-- ✏️ Edit the logo initials here -->
+            <a href="#hero" class="nav-logo">TTP</a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="de.html" class="nav-lang" onclick="localStorage.setItem('preferredLang','de')">DE</a></li>
+            </ul>
+
+            <!-- Hamburger button shown on mobile screens -->
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ================================================================
+             HERO — digital business card
+             ================================================================ -->
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+
+                <!-- Left: text content -->
+                <div class="hero-text">
+                    <p class="hero-greeting">Hello, I'm</p>
+
+                    <!-- ✏️ Edit your name here -->
+                    <h1 class="hero-name">Thanh Truc PHAN</h1>
+
+                    <!-- ✏️ Edit your main headline here -->
+                    <p class="hero-headline">M.Sc. Student in Economics</p>
+                    <!-- ✏️ Edit the sub-headline here -->
+                    <p class="hero-sub-headline">Data &amp; Business Analysis &nbsp;·&nbsp; Macro, Micro &amp; International / Asian Economics</p>
+
+                    <!-- ✏️ Edit your short introduction paragraph here -->
+                    <p class="hero-intro">
+                        M.Sc. Economics student at the University of Bern with a focus on macroeconomics,
+                        microeconomics, econometrics, and applied economic analysis. My studies combine
+                        quantitative methods with fields such as industrial organization, labour economics,
+                        energy economics, climate economics, and banking. I am interested in how economies,
+                        firms, and institutions develop, adapt, and compete. I have a particular interest in
+                        Asian economic transformation, development strategy, energy and climate economics,
+                        and data-driven business analysis.
+                    </p>
+
+                    <div class="hero-badges">
+                        <!-- ✏️ Edit your location here -->
+                        <span class="badge badge-location">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            Bern, Switzerland
+                        </span>
+                        <!-- ✏️ Edit your availability status here -->
+                        <span class="badge badge-open">
+                            <span class="pulse-dot" aria-hidden="true"></span>
+                            Open to internships &amp; entry-level roles
+                        </span>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <!-- ✏️ CV link — make sure assets/cv.pdf exists in the assets folder -->
+                        <a href="assets/cv.pdf" download="CV Thanh Truc Phan" class="btn btn-primary">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Download CV
+                        </a>
+                        <!-- ✏️ Edit your email address here -->
+                        <a href="mailto:thanhtrucphan01@gmail.com" class="btn btn-secondary">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,12 2,6"/>
+                            </svg>
+                            Email Me
+                        </a>
+                        <!-- ✏️ Replace href="#" with your actual LinkedIn profile URL
+                              Example: href="https://linkedin.com/in/thanh-truc-phan" -->
+                        <a href="https://www.linkedin.com/in/thanh-truc-phan" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: profile photo -->
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-ring">
+                        <!-- ✏️ Replace assets/profile.jpg with your own photo file.
+                              Keep the filename "profile.jpg" or update the src here. -->
+                        <img
+                            src="assets/profile.jpg"
+                            alt="Portrait of Thanh Truc Phan"
+                            class="hero-image"
+                            id="profileImg"
+                        >
+                    </div>
+                    <!-- Floating info card below the photo -->
+                    <div class="hero-image-card" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                        <div>
+                            <span>University of Bern</span>
+                            <small>M.Sc. Economics</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================================================================
+             ABOUT ME
+             ================================================================ -->
+        <section id="about" class="section">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Who I Am</span>
+                    <h2>About Me</h2>
+                </div>
+
+                <div class="about-content">
+                    <p class="reveal">
+                        Energetic and curious, I'm happiest when I'm on the move — whether on a Taekwondo mat,
+                        a mountain trail, or exploring a new city. I love spending time with friends and family,
+                        staying active, and capturing the world around me through my camera.
+                    </p>
+
+                    <div class="about-highlights reveal">
+                        <div class="highlight-card">
+                            <span class="highlight-number">5</span>
+                            <span class="highlight-label">Languages</span>
+                            <span class="highlight-sub">DE · VI · EN · FR · JP</span>
+                        </div>
+                        <div class="highlight-card">
+                            <span class="highlight-number">4</span>
+                            <span class="highlight-label">Focus Areas</span>
+                            <span class="highlight-sub">Macro · Micro · Econometrics · Data</span>
+                        </div>
+                        <div class="highlight-card">
+                            <span class="highlight-number">2+</span>
+                            <span class="highlight-label">Years Experience</span>
+                            <span class="highlight-sub">Academic & Industry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="about-sub-heading reveal">Life Outside Studies</h3>
+
+                <div class="hobbies-grid">
+
+                    <div class="hobby-card reveal">
+                        <div class="hobby-photo">
+                            <img src="assets/pictures/taekwondo.jpg" alt="Taekwondo competition" loading="lazy" decoding="async" style="object-position: center top;">
+                        </div>
+                        <div class="hobby-body">
+                            <h3>Taekwondo</h3>
+                            <p>Competing in national tournaments. Martial arts shaped my discipline, focus, and drive to keep pushing.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card reveal">
+                        <div class="hobby-photo">
+                            <img src="assets/pictures/GP-Bern%20Running.jpg" alt="After the Grand Prix de Bern with friends" loading="lazy" decoding="async">
+                        </div>
+                        <div class="hobby-body">
+                            <h3>Running</h3>
+                            <p>Finishing the Grand Prix de Bern with friends is one of my favourite moments of the year.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card reveal">
+                        <div class="hobby-photo">
+                            <img src="assets/pictures/volleyball.jpg" alt="Volleyball team in Tokyo" loading="lazy" decoding="async">
+                        </div>
+                        <div class="hobby-body">
+                            <h3>Volleyball</h3>
+                            <p>Playing with friends in Tokyo and back home. Volleyball is where sport and social life meet.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card reveal">
+                        <div class="hobby-photo">
+                            <img src="assets/pictures/Snowboarding.jpg" alt="Snowboarding in the Alps with friends" loading="lazy" decoding="async" style="object-position: center top;">
+                        </div>
+                        <div class="hobby-body">
+                            <h3>Snowboarding</h3>
+                            <p>Hitting the slopes every winter with friends. Nothing beats a clear day up in the Alps.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card reveal">
+                        <div class="hobby-photo">
+                            <img src="assets/pictures/Bachelor Graduation.jpg" alt="With friends at a University of Bern event" loading="lazy" decoding="async" style="object-position: center top;">
+                        </div>
+                        <div class="hobby-body">
+                            <h3>Friends &amp; Family</h3>
+                            <p>The people around me are my energy source. Whether it's a night out, a trip, or just dinner together.</p>
+                        </div>
+                    </div>
+
+                    <div class="hobby-card reveal">
+                        <div class="hobby-photo">
+                            <img src="assets/pictures/travelling.JPG" alt="Standing on a cliff over turquoise water" loading="lazy" decoding="async">
+                        </div>
+                        <div class="hobby-body">
+                            <h3>Travelling</h3>
+                            <p>New places, new perspectives. From the Swiss Alps to Southeast Asia, always looking for the next destination.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="photo-subsection">
+                    <div class="photo-subsection-header reveal">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                            <circle cx="12" cy="13" r="4"/>
+                        </svg>
+                        <div>
+                            <h3>Photography &amp; Videography</h3>
+                            <p>A selection of shots from Japan and Switzerland.</p>
+                        </div>
+                    </div>
+                    <div class="photo-strip reveal">
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Fuji_.jpg" alt="Mt. Fuji silhouette at dusk, Shonan coast" loading="lazy" decoding="async">
+                            <figcaption>Mt. Fuji at dusk</figcaption>
+                        </figure>
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Alps%20.jpg" alt="Swiss Alps ski slope" loading="lazy" decoding="async" style="object-position: center 25%;">
+                            <figcaption>Swiss Alps</figcaption>
+                        </figure>
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Tokyo%20Festival.jpg" alt="Japanese paper lanterns at a Tokyo festival" loading="lazy" decoding="async" style="object-position: center top;">
+                            <figcaption>Lantern festival, Tokyo</figcaption>
+                        </figure>
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Shrine.jpg" alt="Japanese shrine with torii gate and autumn foliage" loading="lazy" decoding="async">
+                            <figcaption>Shinto shrine, Japan</figcaption>
+                        </figure>
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Shibuya%20Crossing.jpg" alt="Shibuya Crossing at night" loading="lazy" decoding="async" style="object-position: center top;">
+                            <figcaption>Shibuya Crossing</figcaption>
+                        </figure>
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Autumn%20Foliage.jpg" alt="Autumn foliage tunnel in Japan" loading="lazy" decoding="async">
+                            <figcaption>Autumn foliage, Japan</figcaption>
+                        </figure>
+                        <figure class="photo-tile">
+                            <img src="assets/pictures/Hiking.jpg" alt="Hiking ridge in the Swiss Alps" loading="lazy" decoding="async" style="object-position: center 30%;">
+                            <figcaption>Swiss Alps ridge</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================================================================
+             EDUCATION — timeline
+             ================================================================ -->
+        <section id="education" class="section section-alt">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Academic Background</span>
+                    <h2>Education</h2>
+                </div>
+
+                <div class="timeline">
+
+                    <!-- ✏️ Edit each education entry below. Copy/paste a block to add more. -->
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Feb 2025 – Aug 2026 (expected)</span>
+                                <span class="timeline-tag tag-current">Current</span>
+                            </div>
+                            <h3>Master of Science in Economics</h3>
+                            <p class="timeline-institution">University of Bern, Switzerland</p>
+                            <ul class="timeline-details">
+                                <li>Courses: Microeconomics, Industrial Organization, Health Economics, Energy Economics, Labour &amp; Behavioural Economics</li>
+                                <li>Master Thesis: Tourism Economics (working title, in progress)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot timeline-dot-exchange"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Sep 2025 – Feb 2026</span>
+                                <span class="timeline-tag tag-exchange">Exchange</span>
+                            </div>
+                            <h3>Exchange Semester</h3>
+                            <p class="timeline-institution">Waseda University, Tokyo, Japan</p>
+                            <ul class="timeline-details">
+                                <li>Courses: Asian Economy, Development Economics, Japanese Economy</li>
+                                <li>Immersive exposure to Japanese and Asian economic systems</li>
+                                <li>Excellent academic performance (A/A+ grades)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Sep 2022 – Jan 2025</span>
+                            </div>
+                            <h3>Bachelor of Science in Economics</h3>
+                            <p class="timeline-institution">University of Bern, Switzerland</p>
+                            <ul class="timeline-details">
+                                <li>Minors: Mathematics, Digitalization, and Applied Data Science</li>
+                                <li>Thesis: Numerical analysis of the newsvendor problem under risk</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Sep 2020 – Jun 2022</span>
+                            </div>
+                            <h3>Bachelor of Science in Mathematics</h3>
+                            <p class="timeline-institution">University of Bern, Switzerland</p>
+                            <ul class="timeline-details">
+                                <li>Coursework in Analysis and Linear Algebra</li>
+                                <li>Strong quantitative foundation; later transferred to Economics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================
+             WORK EXPERIENCE — timeline
+             ================================================================ -->
+        <section id="experience" class="section">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Professional Background</span>
+                    <h2>Work Experience</h2>
+                </div>
+
+                <div class="timeline">
+
+                    <!-- ✏️ Edit each experience entry below. Copy/paste a block to add more. -->
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Nov 2023 – Present</span>
+                                <span class="timeline-tag tag-current">Current</span>
+                            </div>
+                            <h3>Junior Assistant (HR, Finance &amp; Administration)</h3>
+                            <p class="timeline-institution">
+                                University of Bern — Institute for Information Systems (IWI)
+                                &nbsp;·&nbsp; 40–50%
+                            </p>
+                            <ul class="timeline-details">
+                                <li>Point of contact for students, project partners, and staff</li>
+                                <li>Coordination of communication and organisational processes</li>
+                                <li>Recruitment support: job postings, application management, onboarding, and administration</li>
+                                <li>Financial support: invoice processing, expense reports, and budget tracking</li>
+                                <li>Assistance in quality management and digitalisation of internal processes</li>
+                                <li>Creation and updating of process documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-meta">
+                                <span class="timeline-date">Jun 2022 – Oct 2023</span>
+                            </div>
+                            <h3>Sport Leader</h3>
+                            <p class="timeline-institution">Decathlon — Bern Westside &nbsp;·&nbsp; 30%</p>
+                            <ul class="timeline-details">
+                                <li>Active customer consulting and support in the sale of sporting goods</li>
+                                <li>Ensuring a high level of customer service and satisfaction</li>
+                                <li>Organisation of team events to promote collaboration and cohesion</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================
+             SKILLS — grouped badge cards
+             ================================================================ -->
+        <section id="skills" class="section section-alt">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">What I Bring</span>
+                    <h2>Skills</h2>
+                </div>
+
+                <div class="skills-grid">
+
+                    <!-- ✏️ Edit language entries here -->
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
+                            Languages
+                        </h3>
+                        <div class="skill-tags">
+                            <div class="skill-tag-language">
+                                <span class="lang-name">German</span>
+                                <span class="lang-level lang-native">Native</span>
+                            </div>
+                            <div class="skill-tag-language">
+                                <span class="lang-name">Vietnamese</span>
+                                <span class="lang-level lang-native">Native</span>
+                            </div>
+                            <div class="skill-tag-language">
+                                <span class="lang-name">English</span>
+                                <span class="lang-level">C1 — Fluent</span>
+                            </div>
+                            <div class="skill-tag-language">
+                                <span class="lang-name">French</span>
+                                <span class="lang-level">B2 — Good proficiency</span>
+                            </div>
+                            <div class="skill-tag-language">
+                                <span class="lang-name">Japanese</span>
+                                <span class="lang-level">A2 — Basic knowledge</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ✏️ Edit technical tool badges here -->
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <polyline points="16 18 22 12 16 6"/>
+                                <polyline points="8 6 2 12 8 18"/>
+                            </svg>
+                            Technical Tools
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-badge skill-badge-tech">Python</span>
+                            <span class="skill-badge skill-badge-tech">R</span>
+                            <span class="skill-badge skill-badge-tech">Stata</span>
+                            <span class="skill-badge skill-badge-tech">Matlab</span>
+                            <span class="skill-badge skill-badge-tech">Excel</span>
+                            <span class="skill-badge skill-badge-tech">Microsoft Office</span>
+                            <span class="skill-badge skill-badge-tech">SAP</span>
+                        </div>
+                    </div>
+
+                    <!-- ✏️ Edit professional skill badges here -->
+                    <div class="skill-group reveal">
+                        <h3 class="skill-group-title">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                            Professional Skills
+                        </h3>
+                        <div class="skill-tags">
+                            <span class="skill-badge">Data Analysis</span>
+                            <span class="skill-badge">Economic Modeling</span>
+                            <span class="skill-badge">Quantitative Research</span>
+                            <span class="skill-badge">Numerical Methods</span>
+                            <span class="skill-badge">Applied Data Science</span>
+                            <span class="skill-badge">Financial Analysis</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================================================================
+             PROJECTS / ACADEMIC HIGHLIGHTS
+             ================================================================ -->
+        <section id="projects" class="section">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Academic Work</span>
+                    <h2>Projects &amp; Highlights</h2>
+                </div>
+
+                <div class="projects-grid">
+
+                    <div class="project-card reveal">
+                        <div class="project-preview">
+                            <img src="assets/Projects/Visuals/Beta_Distribution.jpg" alt="Beta distribution demand scenarios — bachelor's thesis chart" loading="lazy">
+                        </div>
+                        <div class="project-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                            </svg>
+                        </div>
+                        <div class="project-meta">Bachelor's Thesis &nbsp;·&nbsp; Nov 2024</div>
+                        <h3>Behavioral Factors in the Newsvendor Problem: A Numerical Analysis</h3>
+                        <p>
+                            Examined how risk aversion, loss aversion, and environmental consciousness influence
+                            optimal ordering decisions in the newsvendor model. Introduced beta distribution demand
+                            scenarios and derived comparative statics numerically using Python.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Decision Theory</span>
+                            <span class="project-tag">Risk &amp; Loss Aversion</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Numerical Methods</span>
+                        </div>
+                        <a href="assets/Projects/Phan_Thanh_Truc_Bachelor_Thesis.pdf" target="_blank" rel="noopener noreferrer" class="project-read-link">
+                            Read Paper
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <div class="project-preview">
+                            <img src="assets/Projects/Visuals/energy consumption per capita over time.png"
+                                 alt="Energy consumption per capita over time — above vs. below median GDP countries"
+                                 loading="lazy">
+                        </div>
+                        <div class="project-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                <path d="M8 21h8M12 17v4"/>
+                            </svg>
+                        </div>
+                        <div class="project-meta">Energy Economics &nbsp;·&nbsp; Spring 2025</div>
+                        <h3>Energy Demand Analysis, Transport Choice &amp; PV Investment</h3>
+                        <p>
+                            Empirical assignment covering four tasks: panel data analysis of energy consumption
+                            across countries (1965–2023) split by income group; short- and long-run price
+                            elasticity estimation using dynamic OLS; multinomial logit transport mode choice
+                            model (Swissmetro stated preference survey); and household PV investment appraisal
+                            with NPV analysis and Monte Carlo simulation of electricity price uncertainty.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Energy Economics</span>
+                            <span class="project-tag">Panel Data</span>
+                            <span class="project-tag">Discrete Choice</span>
+                            <span class="project-tag">Monte Carlo</span>
+                            <span class="project-tag">R / Stata</span>
+                        </div>
+                        <a href="assets/Projects/Energy_Economics_Assignment___Thanh_PHAN_20_120_093.pdf" target="_blank" rel="noopener noreferrer" class="project-read-link">
+                            Read Paper
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="project-card reveal">
+                        <div class="project-preview">
+                            <img src="assets/Projects/Visuals/exchange_rates_timeseries.jpg" alt="JPY/CHF exchange rates time series 1980–2024" loading="lazy">
+                        </div>
+                        <div class="project-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M3 3v18h18"/>
+                                <path d="M18 17l-6-6-4 4-4-4"/>
+                            </svg>
+                        </div>
+                        <div class="project-meta">Japanese Economy &nbsp;·&nbsp; Dec 2025</div>
+                        <h3>Macroeconomic Developments in Japan and Switzerland: A Comparative Analysis</h3>
+                        <p>
+                            Empirical report comparing real GDP growth, CPI inflation, and nominal exchange
+                            rates of Japan and Switzerland (1980–2024). Produced descriptive statistics,
+                            time-series plots, and a correlation matrix using R and OECD / SNB / World Bank data.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Macroeconomics</span>
+                            <span class="project-tag">Japan &amp; Switzerland</span>
+                            <span class="project-tag">R</span>
+                            <span class="project-tag">Data Visualisation</span>
+                        </div>
+                        <a href="assets/Projects/Analysis_of_the_Japanese_Economy_Report_PHAN_Thanh_3225B921_3.pdf" target="_blank" rel="noopener noreferrer" class="project-read-link">
+                            Read Paper
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <div class="papers-list-section">
+                    <h3 class="papers-list-heading reveal">More Academic Work</h3>
+                    <div class="papers-list">
+
+                        <div class="paper-list-item reveal">
+                            <div class="paper-list-meta">Asian Economy &nbsp;·&nbsp; Dec 2025 – Feb 2026</div>
+                            <span class="paper-list-title">Vietnam: Economic Development, Middle-Income Trap &amp; the Path to 2045</span>
+                            <p>Two-part study tracing Vietnam's Đổi Mới transformation since the 1990s, benchmarking against regional peers, and evaluating the feasibility of reaching high-income status by 2045 using the middle-income trap framework.</p>
+                        </div>
+
+                        <div class="paper-list-item reveal">
+                            <div class="paper-list-meta">Climate Economics &nbsp;·&nbsp; Jan 2025</div>
+                            <a href="assets/Projects/Climate_Economics_International Cooperation_Final_Term_Thanh_PHAN_20_120_093.pdf" target="_blank" rel="noopener noreferrer" class="paper-list-title">International Climate Cooperation &amp; Transfer Schemes</a>
+                            <p>Analysis of free-rider problems and coalition formation, with a mathematical derivation of Nash Equilibrium and Global Social Optimum in a biquadratic damage model with deposit-refund transfer schemes.</p>
+                        </div>
+
+                        <div class="paper-list-item reveal">
+                            <div class="paper-list-meta">Climate Economics &nbsp;·&nbsp; Jul 2025</div>
+                            <a href="assets/Projects/Climate_Economics_Scientific and Economic Foundations_Final_Term_ST2025_Thanh_PHAN_20_120_093.pdf" target="_blank" rel="noopener noreferrer" class="paper-list-title">Carbon Budget in the Green Solow Model</a>
+                            <p>Solved and simulated the Green Solow Model: derived balanced growth paths, solved a first-order ODE for the capital time path, and calculated the minimum abatement share required to stay within a given carbon budget.</p>
+                        </div>
+
+                        <div class="paper-list-item reveal">
+                            <div class="paper-list-meta">Labor Economics &nbsp;·&nbsp; Nov 2024</div>
+                            <a href="assets/Projects/Labor_Economics_Assignment_Rebecca_Acosta_14_117_436_Thanh_Phan_20_120_093.pdf" target="_blank" rel="noopener noreferrer" class="paper-list-title">Replication Study: U.S. Wage Inequality &amp; Labor Market Polarization</a>
+                            <p>Replicated key figures from Autor, Katz &amp; Kearney (2008) and Autor &amp; Dorn (2013) on wage inequality and labor market polarization, reconstructed from CPS microdata in R.</p>
+                        </div>
+
+                        <div class="paper-list-item reveal">
+                            <div class="paper-list-meta">Development Economics &nbsp;·&nbsp; Jan 2025</div>
+                            <a href="assets/Projects/Development Economics Survey PHAN Thanh Truc 3225B921_3.pdf" target="_blank" rel="noopener noreferrer" class="paper-list-title">Literature Survey: Inequality &amp; Economic Growth</a>
+                            <p>Compared Forbes (2000), Barro (2000), and Ostry et al. (2014) on the inequality–growth nexus, examining divergent findings and methodological challenges in cross-country panel estimation.</p>
+                        </div>
+
+                        <div class="paper-list-item reveal">
+                            <div class="paper-list-meta">Industrial Ecology &nbsp;·&nbsp; Jan 2026</div>
+                            <a href="assets/Projects/Industrial Ecology Short Paper PHAN Thanh 3225B921-3.pdf" target="_blank" rel="noopener noreferrer" class="paper-list-title">WIOD Input-Output Analysis: CO₂ Emissions of Chocolate Consumption in Germany and Japan</a>
+                            <p>Applied an EEIO framework using WIOD 2013 to quantify embodied CO₂ emissions from chocolate consumption, identifying electricity, food processing, and agriculture as dominant sectors.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================================================================
+             ADDITIONAL DOCUMENTS
+             ================================================================ -->
+        <section id="documents" class="section section-alt">
+            <div class="container">
+
+                <div class="section-header reveal">
+                    <span class="section-label">Documentation</span>
+                    <h2>Additional Documents</h2>
+                </div>
+
+                <p class="documents-notice reveal">
+                    For privacy reasons, diplomas, certificates, transcripts, grades, references, and full academic papers are not published directly on this website. They are available upon request during the application process.
+                </p>
+
+                <div class="documents-grid reveal">
+
+                    <div class="document-card">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                        </svg>
+                        <h3>Diplomas</h3>
+                        <p>Available upon request</p>
+                    </div>
+
+                    <div class="document-card">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                            <circle cx="12" cy="8" r="6"/>
+                            <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+                        </svg>
+                        <h3>Certificates</h3>
+                        <p>Available upon request</p>
+                    </div>
+
+                    <div class="document-card">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                            <path d="M9 11l3 3L22 4"/>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                        </svg>
+                        <h3>Transcripts &amp; Grades</h3>
+                        <p>Available upon request</p>
+                    </div>
+
+                    <div class="document-card">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <h3>References</h3>
+                        <p>Available upon request</p>
+                    </div>
+
+                    <div class="document-card">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                        <h3>Academic Papers</h3>
+                        <p>Available upon request</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ================================================================
+             CONTACT — call to action
+             ================================================================ -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="contact-inner reveal">
+                    <span class="section-label">Get in Touch</span>
+                    <h2>Let's Connect</h2>
+                    <!-- ✏️ Edit the contact description here -->
+                    <p class="contact-description">
+                        I am currently open to internships, trainee programmes, and entry-level opportunities
+                        in economics, data analysis, business, and related fields. Feel free to reach out.
+                    </p>
+                    <div class="contact-buttons">
+                        <!-- ✏️ Edit your email address here (both in href and visible text) -->
+                        <a href="mailto:thanhtrucphan01@gmail.com" class="btn btn-primary">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,12 2,6"/>
+                            </svg>
+                            thanhtrucphan01@gmail.com
+                        </a>
+                        <!-- ✏️ Edit your phone number here (href uses digits only, no spaces) -->
+                        <a href="tel:+41788222201" class="btn btn-secondary">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            +41 78 822 22 01
+                        </a>
+                        <!-- ✏️ Replace href="#" with your actual LinkedIn URL -->
+                        <a href="https://www.linkedin.com/in/thanh-truc-phan" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                <rect x="2" y="9" width="4" height="12"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                            LinkedIn
+                        </a>
+                        <!-- ✏️ CV download — make sure assets/cv.pdf exists -->
+                        <a href="assets/cv.pdf" download="CV Thanh Truc Phan" class="btn btn-outline">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7 10 12 15 17 10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Download CV
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ================================================================
+         FOOTER
+         ================================================================ -->
+    <footer class="footer">
+        <div class="container">
+            <!-- ✏️ Edit the footer text here -->
+            <p>&copy; 2026 Thanh Truc Phan &nbsp;&middot;&nbsp; Bern, Switzerland</p>
+            <p class="footer-note">Built with HTML, CSS &amp; JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
