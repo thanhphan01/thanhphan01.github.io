@@ -73,7 +73,9 @@
 
 html {
     font-size: 16px;
-    /* scroll-behavior intentionally omitted — JS handles smooth scroll via window.scrollTo */
+    scroll-behavior: auto;   /* never CSS-smooth — JS animation handles it */
+    overflow-anchor: none;   /* disable scroll anchoring; it adjusts scrollTop mid-animation */
+    overflow-x: hidden;      /* prevent horizontal overflow on mobile */
 }
 
 body {
@@ -83,6 +85,8 @@ body {
     color: var(--color-text);
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;      /* belt-and-suspenders against horizontal overflow */
+    min-width: 0;
 }
 
 ul { list-style: none; }
@@ -1431,12 +1435,14 @@ p {
         top: 62px;
         left: 0;
         right: 0;
+        width: 100%;           /* never wider than viewport */
         flex-direction: column;
         background-color: var(--color-surface);
         border-bottom: 1px solid var(--color-border);
-        padding: 0.75rem 1.5rem 1rem;
+        padding: 0.75rem 1rem 1rem;
         gap: 0.2rem;
         box-shadow: var(--shadow-md);
+        box-sizing: border-box;
     }
 
     .nav-links.open { display: flex; }
@@ -1446,9 +1452,10 @@ p {
         border-radius: var(--radius-sm);
     }
 
+    /* Keep 3 stat boxes in a row on wider phones (≥ 400 px) */
     .about-highlights {
-        grid-template-columns: 1fr;
-        max-width: 300px;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 100%;
     }
 
     /* Adjust timeline line position */
@@ -1463,23 +1470,62 @@ p {
     .papers-list     { grid-template-columns: 1fr; }
     .photo-strip     { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
     .photo-tile:nth-child(n) { grid-column: auto !important; grid-row: auto !important; }
+
+    /* Hero buttons wrap cleanly */
+    .hero-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+    }
+
+    /* Tighter container on phone */
+    .container { padding: 0 1.1rem; }
+
+    /* Timeline details list readable on small screens */
+    .timeline-details li { font-size: 0.87rem; }
 }
 
-/* Small mobile */
+/* Small mobile (narrow phones, ≤ 480 px) */
 @media (max-width: 480px) {
-    .hero-section { padding: 3rem 0; }
+    .hero-section { padding: 2.5rem 0 2rem; }
     .hero-image-ring { width: 180px; height: 180px; }
-    .section { padding: 3.5rem 0; }
-    .btn { font-size: 0.82rem; padding: 0.6rem 1.05rem; }
+    .section { padding: 3rem 0; }
+    .btn { font-size: 0.82rem; padding: 0.6rem 1rem; }
+
+    /* Tighter container on very small screens */
+    .container { padding: 0 0.9rem; }
+
+    /* 3-col stat boxes on small phones can be tight — stack to 1-col */
+    .about-highlights {
+        grid-template-columns: 1fr;
+        max-width: 260px;
+        margin: 0 auto;
+    }
+
+    .highlight-card { min-height: 90px; }
+
+    /* Skill badges: allow smaller width so they wrap more naturally */
+    .skill-badge { font-size: 0.8rem; }
+
+    /* Documents grid: single column on very small screens */
+    .documents-grid { grid-template-columns: 1fr; }
+
+    /* Photo strip: single column on very small screens */
+    .photo-strip { grid-template-columns: 1fr; grid-auto-rows: 200px; }
 
     .contact-buttons {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
     }
 
     .contact-buttons .btn {
         width: 100%;
-        max-width: 340px;
         justify-content: center;
+    }
+
+    /* Prevent any badge/tag from overflowing its card */
+    .project-tags,
+    .skill-tags {
+        flex-wrap: wrap;
     }
 }

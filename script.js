@@ -32,16 +32,16 @@ function closeMobileMenu() {
 }
 
 /* ── Custom smooth scroll ─────────────────────────────────────────
-   requestAnimationFrame + easeInOutCubic.
-   - Any running animation is cancelled before a new one starts.
-   - startAt is captured inside the first RAF frame so it shares
-     the same DOMHighResTimeStamp clock as the `now` parameter,
-     preventing negative elapsed times in edge-case browser states.
-   - Works identically scrolling up or down.
-   - Respects prefers-reduced-motion.
+   Uses document.scrollingElement.scrollTop (not window.scrollTo)
+   to avoid Chrome Desktop's scroll-anchoring pipeline, which can
+   override programmatic scroll calls mid-animation.
+
+   Version stamp (_animVer) makes stale RAF callbacks self-abort
+   when a new click fires before the previous animation finishes.
 ──────────────────────────────────────────────────────────────── */
 
-let _animId = null;
+let _animId  = null;
+let _animVer = 0;
 
 function easeInOutCubic(t) {
     return t < 0.5
@@ -50,39 +50,46 @@ function easeInOutCubic(t) {
 }
 
 function navScrollTo(targetY) {
-    /* Cancel any in-progress animation before doing anything else */
+    const scroller = document.scrollingElement || document.documentElement;
+
+    /* Cancel any in-progress animation */
     if (_animId !== null) {
         cancelAnimationFrame(_animId);
         _animId = null;
     }
 
+    /* Writing scrollTop back to itself interrupts Chrome's compositor-driven
+       inertia / momentum scroll without any visible position change. */
+    scroller.scrollTop = scroller.scrollTop;
+
     /* Instant jump for reduced-motion preference */
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        window.scrollTo(0, targetY);
+        scroller.scrollTop = targetY;
         return;
     }
 
-    const fromY    = window.scrollY;
-    const distance = targetY - fromY;
+    /* Version stamp — any tick() closure still in flight will see the new
+       version and exit immediately, preventing it from overwriting _animId. */
+    const ver   = ++_animVer;
+    const fromY = scroller.scrollTop;
+    const dist  = targetY - fromY;
 
-    if (Math.abs(distance) < 1) return;
+    if (Math.abs(dist) < 1) return;
 
-    const duration = Math.min(850, Math.max(500, Math.abs(distance) / 3));
-    let   startAt  = null;   /* set on the very first RAF frame */
+    const duration = Math.min(850, Math.max(500, Math.abs(dist) / 3));
+    let startAt = null;
 
     function tick(now) {
+        if (_animVer !== ver) return;          /* superseded by a newer click */
         if (startAt === null) startAt = now;
 
-        const elapsed  = now - startAt;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased    = easeInOutCubic(progress);
-
-        window.scrollTo(0, fromY + distance * eased);
+        const progress = Math.min((now - startAt) / duration, 1);
+        scroller.scrollTop = fromY + dist * easeInOutCubic(progress);
 
         if (progress < 1) {
             _animId = requestAnimationFrame(tick);
         } else {
-            window.scrollTo(0, targetY);   /* snap exactly on the final frame */
+            scroller.scrollTop = targetY;      /* snap exactly on the last frame */
             _animId = null;
         }
     }
@@ -90,7 +97,7 @@ function navScrollTo(targetY) {
     _animId = requestAnimationFrame(tick);
 }
 
-/* Event delegation on document — survives language switching */
+/* Event delegation on document — one listener, survives language switching */
 document.addEventListener('click', (e) => {
     const link = e.target.closest('.nav-header a[href^="#"]');
 
@@ -109,19 +116,19 @@ document.addEventListener('click', (e) => {
     e.preventDefault();
     closeMobileMenu();
 
-    const id   = link.getAttribute('href');
-    const navH = (document.querySelector('.nav-header') || {offsetHeight: 62}).offsetHeight;
+    const id      = link.getAttribute('href');
+    const navH    = (document.querySelector('.nav-header') || { offsetHeight: 62 }).offsetHeight;
+    const scroller = document.scrollingElement || document.documentElement;
 
     if (id === '#hero') {
         navScrollTo(0);
         return;
     }
 
-    /* getElementById is more reliable than querySelector for IDs */
     const target = document.getElementById(id.slice(1));
     if (!target) return;
 
-    const y = target.getBoundingClientRect().top + window.scrollY - navH;
+    const y = target.getBoundingClientRect().top + scroller.scrollTop - navH;
     navScrollTo(Math.max(0, Math.round(y)));
 });
 
@@ -133,9 +140,10 @@ const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-links a');
 
 function updateActiveNav() {
+    const scroller  = document.scrollingElement || document.documentElement;
     const navHeight = document.querySelector('.nav-header')?.offsetHeight ?? 62;
-    const scrollY   = window.scrollY + navHeight + 10;
-    const atBottom  = window.innerHeight + window.scrollY >= document.body.offsetHeight - 80;
+    const scrollY   = scroller.scrollTop + navHeight + 10;
+    const atBottom  = window.innerHeight + scroller.scrollTop >= document.body.scrollHeight - 80;
     let   found     = false;
 
     sections.forEach(section => {
