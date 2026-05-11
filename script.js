@@ -319,3 +319,71 @@ async function renderPdfPreview(lib, canvas) {
         if (wrapper) wrapper.style.display = 'none';
     }
 }
+
+
+/* ----------------------------------------------------------------
+   6.  LIGHTBOX
+   ---------------------------------------------------------------- */
+(function () {
+    const lightbox  = document.getElementById('lightbox');
+    const lbImg     = document.getElementById('lightboxImg');
+    const lbCaption = document.getElementById('lightboxCaption');
+    const lbClose   = document.querySelector('.lightbox-close');
+    if (!lightbox || !lbImg || !lbClose) return;
+
+    let returnFocus = null;
+
+    function openLightbox(src, alt, caption) {
+        returnFocus       = document.activeElement;
+        lbImg.src         = src;
+        lbImg.alt         = alt;
+        lbCaption.textContent = caption;
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('lightbox-open');
+        lbClose.focus();
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('lightbox-open');
+        lbImg.src = '';     /* release memory */
+        if (returnFocus) returnFocus.focus();
+    }
+
+    /* Make every photo tile clickable */
+    document.querySelectorAll('.photo-tile').forEach(tile => {
+        const img     = tile.querySelector('img');
+        const figcap  = tile.querySelector('figcaption');
+        if (!img) return;
+
+        tile.setAttribute('tabindex', '0');
+        tile.setAttribute('role', 'button');
+        tile.setAttribute('aria-label', img.alt || figcap?.textContent || 'Photo');
+
+        function handleOpen() {
+            openLightbox(
+                img.dataset.full || img.src,
+                img.alt,
+                figcap?.textContent || ''
+            );
+        }
+
+        tile.addEventListener('click', handleOpen);
+        tile.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handleOpen(); }
+        });
+    });
+
+    /* Close via ×  button */
+    lbClose.addEventListener('click', closeLightbox);
+
+    /* Close by clicking the dark backdrop (not the image itself) */
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+
+    /* Close with Esc */
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+}());
