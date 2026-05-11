@@ -32,12 +32,15 @@ function closeMobileMenu() {
 }
 
 /* ── Custom smooth scroll ─────────────────────────────────────────
-   Uses document.scrollingElement.scrollTop (not window.scrollTo)
-   to avoid Chrome Desktop's scroll-anchoring pipeline, which can
-   override programmatic scroll calls mid-animation.
-
-   Version stamp (_animVer) makes stale RAF callbacks self-abort
-   when a new click fires before the previous animation finishes.
+   Reliable cross-browser approach:
+   - window.pageYOffset  to read scroll position (always the root)
+   - window.scrollTo(0,y) to write (CSS overflow-anchor:none prevents
+     scroll-anchoring interference)
+   - fromY is captured inside the first RAF frame, not synchronously
+     in navScrollTo — this ensures we start from the real scroll
+     position even if the browser made a same-frame jump
+   - Version stamp (_animVer) makes stale callbacks self-abort when
+     a new click fires before the previous animation finishes
 ──────────────────────────────────────────────────────────────── */
 
 let _animId  = null;
@@ -50,46 +53,51 @@ function easeInOutCubic(t) {
 }
 
 function navScrollTo(targetY) {
-    const scroller = document.scrollingElement || document.documentElement;
-
-    /* Cancel any in-progress animation */
+    /* Cancel any in-progress animation immediately */
     if (_animId !== null) {
         cancelAnimationFrame(_animId);
         _animId = null;
     }
 
-    /* Writing scrollTop back to itself interrupts Chrome's compositor-driven
-       inertia / momentum scroll without any visible position change. */
-    scroller.scrollTop = scroller.scrollTop;
-
     /* Instant jump for reduced-motion preference */
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        scroller.scrollTop = targetY;
+        window.scrollTo(0, targetY);
         return;
     }
 
-    /* Version stamp — any tick() closure still in flight will see the new
-       version and exit immediately, preventing it from overwriting _animId. */
-    const ver   = ++_animVer;
-    const fromY = scroller.scrollTop;
-    const dist  = targetY - fromY;
+    /* Stamp this animation; any older tick() will see the new version
+       and exit without touching _animId or the scroll position. */
+    const ver = ++_animVer;
 
-    if (Math.abs(dist) < 1) return;
-
-    const duration = Math.min(850, Math.max(500, Math.abs(dist) / 3));
-    let startAt = null;
+    /* fromY, dist and duration are captured inside the first RAF frame.
+       This means we read the scroll position after the browser has had
+       one full frame to settle — catching any anchor-jump side-effect
+       that Chrome might apply between the click and the first RAF. */
+    let fromY    = null;
+    let dist     = null;
+    let duration = null;
+    let startAt  = null;
 
     function tick(now) {
-        if (_animVer !== ver) return;          /* superseded by a newer click */
+        if (_animVer !== ver) return;       /* superseded — bail silently */
+
+        /* First frame: snapshot the real starting scroll position */
+        if (fromY === null) {
+            fromY    = window.pageYOffset;
+            dist     = targetY - fromY;
+            duration = Math.min(850, Math.max(500, Math.abs(dist) / 3));
+            if (Math.abs(dist) < 1) { _animId = null; return; }
+        }
+
         if (startAt === null) startAt = now;
 
         const progress = Math.min((now - startAt) / duration, 1);
-        scroller.scrollTop = fromY + dist * easeInOutCubic(progress);
+        window.scrollTo(0, fromY + dist * easeInOutCubic(progress));
 
         if (progress < 1) {
             _animId = requestAnimationFrame(tick);
         } else {
-            scroller.scrollTop = targetY;      /* snap exactly on the last frame */
+            window.scrollTo(0, targetY);    /* snap exactly on the final frame */
             _animId = null;
         }
     }
@@ -116,9 +124,8 @@ document.addEventListener('click', (e) => {
     e.preventDefault();
     closeMobileMenu();
 
-    const id      = link.getAttribute('href');
-    const navH    = (document.querySelector('.nav-header') || { offsetHeight: 62 }).offsetHeight;
-    const scroller = document.scrollingElement || document.documentElement;
+    const id   = link.getAttribute('href');
+    const navH = (document.querySelector('.nav-header') || { offsetHeight: 62 }).offsetHeight;
 
     if (id === '#hero') {
         navScrollTo(0);
@@ -128,7 +135,10 @@ document.addEventListener('click', (e) => {
     const target = document.getElementById(id.slice(1));
     if (!target) return;
 
-    const y = target.getBoundingClientRect().top + scroller.scrollTop - navH;
+    /* getBoundingClientRect().top is relative to viewport.
+       Adding window.pageYOffset converts it to document-absolute.
+       Subtracting navH keeps the section heading clear of the nav. */
+    const y = target.getBoundingClientRect().top + window.pageYOffset - navH;
     navScrollTo(Math.max(0, Math.round(y)));
 });
 
@@ -140,10 +150,9 @@ const sections = document.querySelectorAll('section[id]');
 const navItems = document.querySelectorAll('.nav-links a');
 
 function updateActiveNav() {
-    const scroller  = document.scrollingElement || document.documentElement;
     const navHeight = document.querySelector('.nav-header')?.offsetHeight ?? 62;
-    const scrollY   = scroller.scrollTop + navHeight + 10;
-    const atBottom  = window.innerHeight + scroller.scrollTop >= document.body.scrollHeight - 80;
+    const scrollY   = window.pageYOffset + navHeight + 10;
+    const atBottom  = window.innerHeight + window.pageYOffset >= document.body.scrollHeight - 80;
     let   found     = false;
 
     sections.forEach(section => {

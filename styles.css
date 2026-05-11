@@ -133,6 +133,7 @@ p {
 
 .section {
     padding: 5rem 0;
+    scroll-margin-top: 62px;
 }
 
 .section-alt {
@@ -222,13 +223,20 @@ p {
    6.  NAVIGATION
    ================================================================ */
 .nav-header {
-    position: sticky;
+    position: fixed;          /* sticky breaks when a parent has overflow-x:hidden */
     top: 0;
-    z-index: 100;
-    background-color: rgba(244, 247, 249, 0.92);
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(244, 247, 249, 0.95);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--color-border);
+}
+
+/* Push page content below the fixed header */
+main {
+    padding-top: 62px;
 }
 
 .nav-container {
@@ -332,6 +340,7 @@ p {
     display: flex;
     align-items: center;
     padding: 3rem 0 2.5rem;
+    scroll-margin-top: 62px;
     background: linear-gradient(140deg, #F4F7F9 0%, #EBF5FB 55%, #F4F7F9 100%);
     position: relative;
     overflow: hidden;
