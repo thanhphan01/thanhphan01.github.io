@@ -814,8 +814,6 @@ main {
 }
 
 .skill-badge:hover {
-    background-color: var(--color-accent);
-    color: #fff;
     border-color: var(--color-accent);
 }
 
@@ -827,8 +825,6 @@ main {
 }
 
 .skill-badge-tech:hover {
-    background-color: #1A5276;
-    color: #fff;
     border-color: #1A5276;
 }
 
